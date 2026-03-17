@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Dashboard</title>
+
+<link rel="stylesheet" href="/static/style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+<h2>Budget Tracker</h2>
+
+<a href="/dashboard">Dashboard</a>
+<a href="/add_income">Add Income</a>
+<a href="/add_expense">Add Expense</a>
+<a href="/report">Reports</a>
+<a href="/logout">Logout</a>
+
+</div>
+
+<!-- MAIN CONTENT -->
+
+<div class="main">
+
+<h1>Dashboard</h1>
+
+<!-- SUMMARY CARDS -->
+
+<div class="cards">
+
+<div class="card">
+<h3>Total Income</h3>
+₹ {{income}}
+</div>
+
+<div class="card">
+<h3>Total Expense</h3>
+₹ {{expense}}
+</div>
+
+<div class="card">
+<h3>Balance</h3>
+₹ {{balance}}
+</div>
+
+</div>
+
+<!-- CHARTS -->
+
+<div class="charts-row">
+
+<div class="chart-box">
+    <h3 style="text-align:center;">Income vs Expense Overview</h3>
+<canvas id="barChart"></canvas>
+</div>
+
+<div class="chart-box">
+    <h3 style="text-align:center;">Expense Categories</h3>
+<canvas id="pieChart"></canvas>
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+var income = {{income}};
+var expense = {{expense}};
+
+var categoryLabels = {{category_labels | tojson}};
+var categoryValues = {{category_values | tojson}};
+
+/* BAR CHART */
+
+new Chart(document.getElementById("barChart"), {
+type: "bar",
+data: {
+labels: ["Income", "Expense"],
+datasets: [{
+label: "Amount",
+data: [income, expense]
+}]
+}
+});
+
+/* PIE CHART */
+
+new Chart(document.getElementById("pieChart"), {
+type: "pie",
+data: {
+labels: categoryLabels,
+datasets: [{
+data: categoryValues
+}]
+}
+});
+
+</script>
+
+</body>
+</html>
