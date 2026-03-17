@@ -65,7 +65,7 @@ personal_budget_tracker/
 ## Installation
 
 ### 1 Clone the repository
-git clone https://github.com/your-username/personal-budget-tracker.git
+git cloneb https://github.com/Rakesh5320/personal_budget_tracker.git
 
 ### 2 Navigate to the project directory
 cd personal-budget-tracker
