@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Personal Budget Tracker</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body class="login-page">
+
+<div class="login-box">
+
+<h2>Personal Budget Tracker</h2>
+
+<form action="/login" method="post">
+
+<input type="text" name="username" placeholder="Username" required>
+
+<input type="password" name="password" placeholder="Password" required>
+
+<button type="submit">Login</button>
+
+</form>
+
+<br>
+
+<a href="/register">
+<button class="signup-btn">New User Sign Up</button>
+</a>
+
+</div>
+
+</body>
+</html>
