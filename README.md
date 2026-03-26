@@ -105,7 +105,8 @@ Income page
 Expense page
 <img width="1366" height="690" alt="image" src="https://github.com/user-attachments/assets/c7e7e941-76e0-4bd3-9e90-0271720ae34f" />
 Report page
-<img width="1365" height="685" alt="image" src="https://github.com/user-attachments/assets/a83101c3-0267-4d9d-8476-b8748c901d5f" />
+<img width="1365" height="685" alt="image" src="https://github.com/user-attachments/assets/5b12791f-442f-4d8d-b749-259044209f0b" />
+
 
 
 ---
