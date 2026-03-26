@@ -99,11 +99,11 @@ http://127.0.0.1:5000
 login page
 <img width="1366" height="688" alt="image" src="https://github.com/user-attachments/assets/4d66a6aa-694e-4c88-8d69-e7c5d6ea5e06" />
 Dashboard page
-<img width="1361" height="688" alt="image" src="https://github.com/user-attachments/assets/a2ec6597-4361-4110-b3e6-6b04828f10ce" />
+<img width="1366" height="689" alt="image" src="https://github.com/user-attachments/assets/fe1a96c0-3f01-4f25-adbf-6d428da4a3f5" />
 Income page
-<img width="1366" height="686" alt="image" src="https://github.com/user-attachments/assets/f3e3ba1e-9441-405d-9882-fb9e9d7c6398" />
+<img width="1366" height="617" alt="image" src="https://github.com/user-attachments/assets/27c13db2-e2bd-4639-91ad-fd698520474d" />
 Expense page
-<img width="1366" height="690" alt="image" src="https://github.com/user-attachments/assets/c7e7e941-76e0-4bd3-9e90-0271720ae34f" />
+<img width="1366" height="605" alt="image" src="https://github.com/user-attachments/assets/1af6211c-0cb8-4e26-92bd-5c080b77d9f3" />
 Report page
 <img width="1365" height="685" alt="image" src="https://github.com/user-attachments/assets/5b12791f-442f-4d8d-b749-259044209f0b" />
 
