@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Expense Reports</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2 class="title">📊 Expense Reports</h2>
+
+    <!-- CONTROLS -->
+    <div class="controls">
+    <a href="/report?filter=daily"><button class="btn">Daily</button></a>
+    <a href="/report?filter=weekly"><button class="btn">Weekly</button></a>
+    <a href="/report?filter=monthly"><button class="btn">Monthly</button></a>
+    <a href="/report?filter=yearly"><button class="btn">Yearly</button></a>
+    <a href="/export_pdf/{{ filter_type }}">
+    <button class="btn pdf">Download PDF</button></a>
+</div>
+
+    <!-- SUMMARY CARDS -->
+    <div class="summary-buttons">
+    <div class="mini-btn income-btn">
+        Income = ₹ {{ income }}
+    </div>
+
+    <div class="mini-btn expense-btn">
+        Expense = ₹ {{ expense }}
+    </div>
+</div>
+
+    <!-- MAIN CONTENT -->
+    <div class="main">
+
+        <!-- TABLE -->
+        <div class="table-section">
+            <h3>Transactions</h3>
+
+            <table>
+                <tr>
+                    <th>Date</th>
+                    <th>Type</th>
+                    <th>Category</th>
+                    <th>Amount</th>
+                    <th>Description</th>
+                </tr>
+
+                {% for row in data %}
+                <tr>
+                    <td>{{ row.date }}</td>
+                    <td>{{ row.type }}</td>
+                    <td>{{ row.category }}</td>
+                    <td>₹ {{ row.amount }}</td>
+                    <td>{{ row.description }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+
+        <!-- CHARTS -->
+        <div class="chart-section">
+            <h3>Analytics</h3>
+            <canvas id="pieChart"></canvas>
+        </div>
+
+    </div>
+
+    <div class="back">
+        <a href="/dashboard"><button class="btn back-btn">⬅ Back</button></a>
+    </div>
+
+</div>
+
+<script>
+const labels = {{ chart_labels | tojson }};
+const values = {{ chart_values | tojson }};
+
+new Chart(document.getElementById("barChart"), {
+    type: "bar",
+    data: {
+        labels: labels,
+        datasets: [{
+            label: "Amount",
+            data: values,
+            backgroundColor: ["#2ecc71", "#e74c3c"]
+        }]
+    }
+});
+
+new Chart(document.getElementById("pieChart"), {
+    type: "pie",
+    data: {
+        labels: labels,
+        datasets: [{
+            data: values,
+            backgroundColor: ["#2ecc71", "#e74c3c"]
+        }]
+    }
+});
+</script>
+
+</body>
+</html>
