@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Add Income</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<div class="page-card">
+
+<h2 class="page-title">Add Income</h2>
+
+<form method="post">
+
+<div class="form-group">
+
+<input type="date" name="date" required>
+
+<input type="text" name="source" placeholder="Source" required>
+
+<input type="number" name="amount" placeholder="Amount" required>
+<input type="text" name="description" placeholder="Description" required>
+
+<button class="btn-add">Add</button>
+
+</div>
+
+</form>
+
+<table>
+
+ <tr>
+        <th>Date</th>
+        <th>Source</th>
+        <th>Amount</th>
+        <th>Description</th>
+        <th>Delete</th>
+    </tr>
+
+    {% for row in income %}
+    <tr>
+        <td>{{ row.date }}</td>
+        <td>{{ row.source }}</td>
+        <td>{{ row.amount }}</td>
+        <td> {{row.description}}</td>
+        <td>
+            <a class="delete-btn" href="/delete_income/{{ row.id }}">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+
+</table>
+<br>
+
+<div style="text-align:center;">
+<a href="/dashboard">
+<button class="btn-back">⬅ Back to Dashboard</button>
+</a>
+</div>
+
+</div>
+
+</div>
+
+</body>
+
+</html>
